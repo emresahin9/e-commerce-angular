@@ -1,0 +1,35 @@
+<body class="text-center">
+    <main class="form-signin ">
+        <form [formGroup]="loginForm">
+            <h1 class="h3 mb-3 fw-normal">Yönetici Girişi</h1>
+            <div class="form-floating">
+                <input type="email" class="form-control" id="email" formControlName="email" placeholder="name@example.com">
+                <label for="email">E posta</label>
+                <div *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)" class="alert text-danger">
+                    <div *ngIf="loginForm.controls['email'].errors.required">
+                        Lütfen eposta giriniz
+                    </div>
+                    <div *ngIf="loginForm.controls['email'].errors.email">
+                        E posta formatına uygun giriniz
+                    </div>
+                </div>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="password" formControlName="password" placeholder="Password">
+                <label for="password">Parola</label>
+                <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)" class="alert text-danger">
+                    <div *ngIf="loginForm.controls['password'].errors.required">
+                        Lütfen şifre giriniz
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div> -->
+            <button class="w-100 btn btn-lg btn-primary" type="submit" (click)="login()">Giriş yap</button>
+        </form>
+    </main>
+</body>
+

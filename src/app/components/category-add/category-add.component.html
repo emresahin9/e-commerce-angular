@@ -1,0 +1,20 @@
+<section class="container">
+    <h4 class="m-4">Kategori Ekleme</h4>
+    <hr />
+    <div class="d-flex justify-content-center">
+        <form [formGroup]="categoryAddForm" class="mt-2 col-12 col-md-9 col-lg-6">
+            <div class="mb-3">
+                <label class="form-label">Kategori Adı</label>
+                <input id="name" formControlName="name" type="text" class="form-control">
+                <div *ngIf="categoryAddForm.controls['name'].invalid && (categoryAddForm.controls['name'].dirty || categoryAddForm.controls['name'].touched)" class="alert text-danger">
+                    <div *ngIf="categoryAddForm.controls['name'].errors.required">
+                        Lütfen kategori adı giriniz
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5 d-grid gap-2">
+                <button (click)="add()" class="btn btn-primary">Ekle</button>
+            </div>
+        </form>
+    </div>
+</section>

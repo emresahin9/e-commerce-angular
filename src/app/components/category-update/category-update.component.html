@@ -1,0 +1,21 @@
+<section class="container">
+    <h4 class="m-4">Kategori Güncelleme</h4>
+    <hr />
+    <div class="d-flex justify-content-center">
+        <form [formGroup]="categoryUpdateForm" class="mt-2 col-12 col-md-9 col-lg-6">
+            <input type="hidden" formControlName="id">
+            <div class="mb-3">
+                <label class="form-label">Kategori Adı</label>
+                <input id="name" formControlName="name" type="text" class="form-control">
+                <div *ngIf="categoryUpdateForm.controls['name'].invalid && (categoryUpdateForm.controls['name'].dirty || categoryUpdateForm.controls['name'].touched)" class="alert text-danger">
+                    <div *ngIf="categoryUpdateForm.controls['name'].errors.required">
+                        Lütfen kategori adı giriniz
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5 d-grid gap-2">
+                <button (click)="update()" class="btn btn-primary">Güncelle</button>
+            </div>
+        </form>
+    </div>
+</section>

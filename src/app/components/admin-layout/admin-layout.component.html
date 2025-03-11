@@ -1,0 +1,83 @@
+<header class="p-3 bg-dark text-white">
+  <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+    <a routerLink="admin-dashboard"
+      class="nav col-12 col-lg-auto ms-5 me-lg-auto mb-3 justify-content-center mb-md-0 text-white text-decoration-none">
+      <!-- <i class="fa fa-hospital-o fa-2x"></i> -->
+    </a>
+    <div class="text-end">
+      <span class="px-3 py-2 me-3 m-1 text-light d-inline-flex align-items-center rounded-pill bg-opacity-25 bg-light">
+        <i class="fa fa-user-circle me-2"></i>
+        <span class="fw-bold me-1">Yönetici</span>
+      </span>
+      <a routerLink="/admin-login" type="button" class="btn btn-outline-light me-2 m-1">Çıkış Yap</a>
+    </div>
+  </div>
+</header>
+<main class="d-flex flex-nowrap">
+  <button class="btn btn-outline-dark d-md-none m-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+      ☰ Menü
+  </button>
+  <!-- Sidebar -->
+  <div class="offcanvas offcanvas-start d-md-block bg-white" tabindex="-1" id="sidebarMenu">
+      <div class="offcanvas-header d-md-none">
+          <h5 class="offcanvas-title">Menü</h5>
+          <button type="button" style="max-height: 80px;" class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body p-3" style="width: 280px;">
+          <a routerLink="admin-dashboard" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+              <i class="fa fa-home fa-lg me-2"></i>
+              <span class="fs-5 fw-semibold">Anasayfa</span>
+          </a>
+          <ul class="list-unstyled ps-0">
+              <li class="mb-1">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                      Kategori İşlemleri
+                  </button>
+                  <div class="collapse show" id="home-collapse">
+                      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                          <li>
+                              <i class="fa fa-list ms-2"></i>
+                              <a routerLink="categories" class="link-dark rounded m-auto">Kategoriler</a>
+                          </li>
+                          <li>
+                              <i class="fa fa-plus ms-2"></i>
+                              <a routerLink="add-category" class="link-dark rounded m-auto">Kategori Ekle</a>
+                          </li>
+                      </ul>
+                  </div>
+              </li>
+              <!-- <li class="mb-1">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">
+                      Ürün İşlemleri
+                  </button>
+                  <div class="collapse show" id="dashboard-collapse">
+                      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                          <li>
+                              <i class="fa fa-user-md ms-2"></i>
+                              <a routerLink="products" class="link-dark rounded m-auto">Ürünler</a>
+                          </li>
+                      </ul>
+                  </div>
+              </li> -->
+              <li class="border-top my-3"></li>
+              <li class="mb-1">
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="true">
+                      Hesap
+                  </button>
+                  <div class="collapse show" id="account-collapse">
+                      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                          <li>
+                              <i class="fa fa-sign-out ms-2"></i>
+                              <a routerLink="login" class="link-dark rounded m-auto">Çıkış Yap</a>
+                          </li>
+                      </ul>
+                  </div>
+              </li>
+          </ul>
+      </div>
+  </div>
+  <router-outlet></router-outlet>
+</main>
+<footer>
+  <!-- Admin footer -->
+</footer>
