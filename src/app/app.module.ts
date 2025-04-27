@@ -14,6 +14,12 @@ import { authInterceptor } from './interceptors/auth.interceptor';
 import { CategoryAddComponent } from './components/category-add/category-add.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { CategoryUpdateComponent } from './components/category-update/category-update.component';
+import { ProductsComponent } from './components/products/products.component';
+import { ProductAddComponent } from './components/product-add/product-add.component';
+import { ProductUpdateComponent } from './components/product-update/product-update.component';
+import { BrandsComponent } from './components/brands/brands.component';
+import { BrandAddComponent } from './components/brand-add/brand-add.component';
+import { BrandUpdateComponent } from './components/brand-update/brand-update.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +29,13 @@ import { CategoryUpdateComponent } from './components/category-update/category-u
     AdminDashboardComponent,
     CategoryAddComponent,
     CategoriesComponent,
-    CategoryUpdateComponent
+    CategoryUpdateComponent,
+    ProductsComponent,
+    ProductAddComponent,
+    ProductUpdateComponent,
+    BrandsComponent,
+    BrandAddComponent,
+    BrandUpdateComponent
   ],
   imports: [
     BrowserModule,

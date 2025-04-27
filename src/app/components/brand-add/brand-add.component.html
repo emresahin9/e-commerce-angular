@@ -1,0 +1,20 @@
+<section class="container">
+    <h4 class="m-4">Marka Ekleme</h4>
+    <hr />
+    <div class="d-flex justify-content-center">
+        <form [formGroup]="brandAddForm" class="mt-2 col-12 col-md-9 col-lg-6">
+            <div class="mb-3">
+                <label class="form-label">Marka Adı</label>
+                <input id="name" formControlName="name" type="text" class="form-control">
+                <div *ngIf="brandAddForm.controls['name'].invalid && (brandAddForm.controls['name'].dirty || brandAddForm.controls['name'].touched)" class="alert text-danger">
+                    <div *ngIf="brandAddForm.controls['name'].errors.required">
+                        Lütfen marka adı giriniz
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5 d-grid gap-2">
+                <button (click)="add()" class="btn btn-primary">Ekle</button>
+            </div>
+        </form>
+    </div>
+</section>

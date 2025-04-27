@@ -16,7 +16,7 @@ export class CategoryService {
   constructor(private httpClient:HttpClient) { }
   
   getCategories():Observable<ListResponseModel<Category>>{
-    let newPath = this.apiUrl + "get-all-categories"
+    let newPath = this.apiUrl + "get-all-categories";
     return this.httpClient.get<ListResponseModel<Category>>(newPath);
   }
 
@@ -35,5 +35,10 @@ export class CategoryService {
 
   delete(id:number):Observable<ResponseModel>{
     return this.httpClient.get<ResponseModel>(this.apiUrl + "delete-category?id=" + id);
+  }
+
+  getCategoriesForOptions():Observable<ListResponseModel<Category>>{
+    let newPath = this.apiUrl + "get-all-categories-for-options";
+    return this.httpClient.get<ListResponseModel<Category>>(newPath);
   }
 }

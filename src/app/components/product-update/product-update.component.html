@@ -1,0 +1,33 @@
+<section class="container">
+    <h4 class="m-4">Ürün Güncelleme</h4>
+    <hr />
+    <div class="d-flex justify-content-center">
+        <form [formGroup]="productUpdateForm" class="mt-2 col-12 col-md-9 col-lg-6">
+            <input type="hidden" formControlName="id">
+            <div class="mb-3">
+                <label class="form-label">Ürün Adı</label>
+                <input id="name" formControlName="name" type="text" class="form-control">
+                <div *ngIf="productUpdateForm.controls['name'].invalid && (productUpdateForm.controls['name'].dirty || productUpdateForm.controls['name'].touched)" class="alert text-danger">
+                    <div *ngIf="productUpdateForm.controls['name'].errors.required">
+                        Lütfen ürün adı giriniz
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Bulunduğu kategori</label>
+                <select id="categoryId" formControlName="categoryId" class="form-select">
+                    <option value="{{null}}">-Seçiniz-</option>
+                    <option *ngFor="let categoryOption of categoryOptions" [value]="categoryOption.id">{{ categoryOption.name }}</option>
+                </select>
+                <div *ngIf="productUpdateForm.controls['categoryId'].invalid && (productUpdateForm.controls['categoryId'].dirty || productUpdateForm.controls['categoryId'].touched)" class="alert text-danger">
+                    <div *ngIf="productUpdateForm.controls['categoryId'].errors.required">
+                        Lütfen kategori seçiniz
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5 d-grid gap-2">
+                <button (click)="update()" class="btn btn-primary">Güncelle</button>
+            </div>
+        </form>
+    </div>
+</section>

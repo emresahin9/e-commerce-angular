@@ -1,0 +1,32 @@
+<section class="container">
+    <h4 class="m-4">Ürün Ekleme</h4>
+    <hr />
+    <div class="d-flex justify-content-center">
+        <form [formGroup]="productAddForm" class="mt-2 col-12 col-md-9 col-lg-6">
+            <div class="mb-3">
+                <label class="form-label">Ürün Adı</label>
+                <input id="name" formControlName="name" type="text" class="form-control">
+                <div *ngIf="productAddForm.controls['name'].invalid && (productAddForm.controls['name'].dirty || productAddForm.controls['name'].touched)" class="alert text-danger">
+                    <div *ngIf="productAddForm.controls['name'].errors.required">
+                        Lütfen ürün adı giriniz
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Bulunduğu kategori</label>
+                <select id="categoryId" formControlName="categoryId" class="form-select">
+                    <option value="{{null}}">-Seçiniz-</option>
+                    <option *ngFor="let categoryOption of categoryOptions" [value]="categoryOption.id">{{ categoryOption.name }}</option>
+                </select>
+                <div *ngIf="productAddForm.controls['categoryId'].invalid && (productAddForm.controls['categoryId'].dirty || productAddForm.controls['categoryId'].touched)" class="alert text-danger">
+                    <div *ngIf="productAddForm.controls['categoryId'].errors.required">
+                        Lütfen kategori seçiniz
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5 d-grid gap-2">
+                <button (click)="add()" class="btn btn-primary">Ekle</button>
+            </div>
+        </form>
+    </div>
+</section>

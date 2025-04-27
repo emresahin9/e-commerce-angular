@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './category-update.component.html',
   styleUrl: './category-update.component.css'
 })
-export class CategoryUpdateComponent   implements OnInit {
+export class CategoryUpdateComponent implements OnInit {
   categoryId:number;
   categoryUpdateForm : FormGroup;
 
@@ -37,7 +37,6 @@ export class CategoryUpdateComponent   implements OnInit {
         name: response.data.name
       });
     });
-    console.log(this.categoryUpdateForm);
   }
 
   update(){

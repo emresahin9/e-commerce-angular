@@ -1,0 +1,26 @@
+<section class="container">
+    <div class="d-flex justify-content-between m-4">
+        <h4>Tüm <b>markalar</b></h4>
+        <a routerLink="/admin/add-brand" class="btn btn-primary col-md-4 col-lg-3 col-xl-2 col-xxl-1" style="max-height:40px;">Ekle</a>
+    </div>
+    <div class="container mt-2">
+            <p *ngIf="brands.length==0">Hiç marka bulunmuyor.</p>
+            <table *ngIf="brands.length>0" class="table table-dark table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Marka Adı</th>
+                        <th scope="col" class="text-center">İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr *ngFor="let brand of brands">
+                            <td>{{brand.name}}</td>
+                            <td class="text-center">
+                                <a routerLink="/admin/update-brand/{{brand.id}}" class="btn btn-outline-info m-1">Güncelle</a>
+                                <button type="button" (click)="delete(brand.id)" class="btn btn-outline-danger m-1" style="width: 87px;">Sil</button>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+    </div>
+</section>
